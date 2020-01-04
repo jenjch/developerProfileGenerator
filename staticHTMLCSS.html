@@ -1,32 +1,4 @@
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-function generateHTML(data) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -34,7 +6,7 @@ function generateHTML(data) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-      <title>Document</title>
+      <title>Resume</title>
       <style>
           @page {
             margin: 0;
@@ -52,7 +24,7 @@ function generateHTML(data) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: blue;
          padding-top: 100px;
          }
          body {
@@ -94,8 +66,8 @@ function generateHTML(data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: salmon;
+         color: white;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -106,7 +78,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid yellow;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -149,8 +121,8 @@ function generateHTML(data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: salmon;
+           color: white;
            margin: 20px;
          }
          
@@ -171,34 +143,31 @@ function generateHTML(data) {
           } 
          }
       </style>
-      // need to add html in addition to provided css
-      </head>
+    </head>
     <body>
         <!-- https://api.github.com/users/jenjch -->
         <div class ="wrapper">
             <div class ="photo-header">
                 <!-- avatar_url -->
-                <img src="${data.avatar_url}" alt="${data.name} profile pic">
+                <img src="https://avatars0.githubusercontent.com/u/56455999?v=4" alt="profile pic of user">
                 <h1>Hi!</h1>
                 <!-- name -->
-                <h2>My name is ${data.name}!</h2>
+                <h2>My name is Jenny Chen!</h2>
                 <!-- company -->
-                <h4> Currently @ ${data.company}</h4>
+                <h4> Currently @ Northwestern University</h4>
 
                 <nav class="links-nav">
                     <div class="nav-link">
                         <!-- location -->
-                        <a href= "https://www.google.com/maps/place/${data.location}" target="_blank"><i class="fas fa-location-arrow"></i> ${data.location}</a>
+                        <a href = "https://www.google.com/maps/place/Evanston, IL" target="_blank"><i class="fas fa-location-arrow"></i> Evanston, Il</a>
                     </div>
                     <div class="nav-link">
                         <!-- html_url -->
-                        <a href= "${
-                          data.html_url}" target="_blank"><i class="fab fa-github-alt"></i> Github</a>
+                        <a href = "https://github.com/jenjch" target="_blank"><i class="fab fa-github-alt"></i> Github</a>
                     </div>
                     <div class="nav-link">
                         <!-- blog -->
-                        <a href= "${
-                          data.blog}" target="_blank"><i class="fas fa-rss"></i> Blog</a>
+                        <a href = "https://www.google.com" target="_blank"><i class="fas fa-rss"></i> Blog</a>
                     </div>
                 </nav>
             </div>
@@ -208,7 +177,7 @@ function generateHTML(data) {
                     <div class="row">
                         <div class="col">
                             <!-- bio -->
-                            <h4>${data.bio}</h4>
+                            <h4>Hello! I work in higher education, managing systems and vendor software interfaces.</h4>
                         </div>
                     </div>
 
@@ -217,7 +186,7 @@ function generateHTML(data) {
                             <div class="card">
                                 <h3>Public Repositories</h3>
                                 <!-- public_repos -->
-                                <h4>${data.public_repos}</h4>
+                                <h4>11</h4>
                             </div>
                         </div>
 
@@ -225,7 +194,7 @@ function generateHTML(data) {
                             <div class="card">
                                 <h3>Followers</h3>
                                 <!-- followers -->
-                                <h4>${data.followers}</h4>
+                                <h4>2</h4>
                             </div>
                         </div>
                     </div>
@@ -235,7 +204,7 @@ function generateHTML(data) {
                             <div class="card">
                                 <h3>Github Stars</h3>
                                 <!-- stargazers_count different api call -->
-                                <h4>${data.stargazers_count}</h4>
+                                <h4>1</h4>
                             </div>
                         </div>
 
@@ -243,7 +212,7 @@ function generateHTML(data) {
                             <div class="card">
                                 <h3>Following</h3>
                                 <!-- following -->
-                                <h4>${data.following}</h4>
+                                <h4>2</h4>
                             </div>
                         </div>
                     </div>
@@ -252,6 +221,4 @@ function generateHTML(data) {
         </div>
 
     </body>
-</html>`;
-        }
-module.exports = generateHTML;
+</html>
