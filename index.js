@@ -10,7 +10,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const questions = [
 {
     type:"input",
-    name: "github"
+    name: "github",
     message: "What is your GitHub username?"
 },
 { 
@@ -21,15 +21,49 @@ const questions = [
 } 
 ];
 
-function writeToFile(fileName, data) {
- 
+function promptUser() {
+    return inquirer.prompt(questions);
 }
+// get response
+// change html file (try the color first)
+// then axios call to gather additional github response info
+// create html file
+// convert to pdf using html-pdf
 
-function init() {
+/**
+ * Filename represents the name of the file user wants to call their pdf file 
+ * Data is the information given to construct our pdf, the html file we created.
+ * @param {String} fileName 
+ * @param {Object} data 
+ */
+
+async function init() {
+    console.log("hi")
+    try {
+      const data = await promptUser();
+  
+      const html = generateHTML(data);
+  
+      await writeFileAsync("index.html", html);
+  
+      console.log("Successfully wrote to index.html");
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+
+// function writeToFile(fileName, data) {
+ 
+// }
+
+// function init() {
+//     // compiles all function calls
+// }
 
 init();
 
-// axios
+// axios from mini project is below
 // const fs = require("fs");
 // const axios = require("axios");
 // const inquirer = require("inquirer");
