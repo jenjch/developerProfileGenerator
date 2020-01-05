@@ -80,6 +80,8 @@ function generateHTML(data) {
          }
          h4 {
          font-size: 1.5em;
+         /* added additional code since conversion from HTML to PDF is wonky for this header */
+         text-align: center;
          }
          h5 {
          font-size: 1.3em;
@@ -171,7 +173,7 @@ function generateHTML(data) {
           } 
          }
       </style>
-      // need to add html in addition to provided css
+
       </head>
     <body>
         <!-- https://api.github.com/users/jenjch -->
@@ -235,7 +237,7 @@ function generateHTML(data) {
                             <div class="card">
                                 <h3>Github Stars</h3>
                                 <!-- stargazers_count different api call -->
-                                <h4>${data.stargazers_count}</h4>
+                                <h4>${data.stars}</h4>
                             </div>
                         </div>
 
