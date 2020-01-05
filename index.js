@@ -59,7 +59,7 @@ async function init() {
         console.log("stars:" + numStars);
     };
 
-   // Create new object combining answers and data from the 2 API calls
+   // create new object combining answers and data from the 2 API calls
    const htmlData = {
     // 2 question answers
     color: answers.color,
@@ -82,12 +82,12 @@ async function init() {
   
       const html = generateHTML(htmlData);
       
-    // Creates HTML file and uses the generateHTML function from separate file
+    // creates HTML file and uses the generateHTML function from separate js file
       await writeFileAsync("index.html", html);
   
       console.log("Successfully wrote to index.html");
 
-    // Uses the code from https://www.npmjs.com/package/html-pdf for PDF conversion
+    // uses the code from https://www.npmjs.com/package/html-pdf for PDF conversion
       var useHTML = fs.readFileSync('./index.html', 'utf8');
       var options = { format: 'Letter' };
     
