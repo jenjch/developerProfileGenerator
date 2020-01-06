@@ -38,8 +38,12 @@ The HTML to PDF product I used was html-pdf (https://www.npmjs.com/package/html-
 
 ## Deployment
 
-The completed application is updated and available in Github: 
+The completed application is updated and available for download (including a sample of a generated PDF) in Github: 
 https://github.com/jenjch/developerProfileGenerator
+
+A sample of a generated HTML is deployed at:
+https://jenjch.github.io/developerProfileGenerator/
+
 
 An animated gif demonstrating the app functionality is availabe here: ![profile generator demo](./profileGenerator.gif)
 
