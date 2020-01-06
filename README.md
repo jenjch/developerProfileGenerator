@@ -44,9 +44,7 @@ https://github.com/jenjch/developerProfileGenerator
 A sample of a generated HTML is deployed at:
 https://jenjch.github.io/developerProfileGenerator/
 
-
-An animated gif demonstrating the app functionality is availabe here: ![profile generator demo](./profileGenerator.gif)
-
+An animated gif demonstrating the app functionality is available in the repo and here: ![profile generator demo](./profileGenerator.gif)
 
 ## Acceptance Criteria
 
